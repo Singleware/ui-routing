@@ -1,0 +1,51 @@
+{
+  "author": {
+    "name": "Silas B. Domingos",
+    "email": "hello@balmante.eti.br",
+    "url": "https://balmante.eti.br"
+  },
+  "name": "@singleware/ui-routing",
+  "description": "Singleware UI routing package.",
+  "license": "MIT",
+  "version": "1.0.1",
+  "main": "release/source/index.js",
+  "types": "release/types/index.d.ts",
+  "keywords": [
+    "routing",
+    "ui routing",
+    "user interface",
+    "browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/singleware/ui-routing"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "@singleware/class": "^1.1.11",
+    "@singleware/jsx": "^1.0.12",
+    "@singleware/path": "^1.0.0",
+    "@singleware/routing": "^1.0.23",
+    "@singleware/ui-control": "^1.0.11"
+  },
+  "devDependencies": {
+    "@singleware/frontend": "^1.0.28",
+    "prettier": "^1.14.2",
+    "typescript": "^2.9.2"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "scripts": {
+    "build": "npm run make && npm run update",
+    "make": "tsc",
+    "update": "npm run update-router && npm run update-route",
+    "update-router": "cp -Rf ./source/router/*.d.ts ./release/types/router",
+    "update-route": "cp -Rf ./source/route/*.d.ts ./release/types/route"
+  }
+}
