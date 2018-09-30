@@ -19,18 +19,14 @@ export class Template extends Control.Component<Properties> {
    * Router skeleton.
    */
   @Class.Private()
-  private skeleton: Element = <div class={this.properties.class}>{this.children}</div> as Element;
+  private skeleton = <div class={this.properties.class}>{this.children}</div> as Element;
 
   /**
    * Bind exposed properties to the custom element.
    */
   @Class.Private()
   private bindProperties(): void {
-    Object.defineProperties(this.skeleton, {
-      path: super.bindDescriptor(this, Template.prototype, 'path'),
-      exact: super.bindDescriptor(this, Template.prototype, 'exact'),
-      constraint: super.bindDescriptor(this, Template.prototype, 'constraint')
-    });
+    this.bindComponentProperties(this.skeleton, ['path', 'exact', 'constraint']);
   }
 
   /**

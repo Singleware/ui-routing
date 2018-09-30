@@ -12,6 +12,7 @@ import * as Route from '../route';
 
 import { Properties } from './properties';
 import { Element } from './element';
+import { States } from './states';
 
 /**
  * Router template class.
@@ -25,13 +26,13 @@ export class Template extends Control.Component<Properties> {
   private states = {
     path: '',
     base: ''
-  };
+  } as States;
 
   /**
    * Router manager.
    */
   @Class.Private()
-  private router: Routing.Router<void> = new Routing.Router({
+  private router = new Routing.Router<void>({
     separator: '/',
     variable: /^\{([a-z_0-9]+)\}$/
   });
@@ -40,7 +41,7 @@ export class Template extends Control.Component<Properties> {
    * Router skeleton.
    */
   @Class.Private()
-  private skeleton: Element = <div slot={this.properties.slot} class={this.properties.class} /> as Element;
+  private skeleton = <div slot={this.properties.slot} class={this.properties.class} /> as Element;
 
   /**
    * Route match event handler.
@@ -56,12 +57,7 @@ export class Template extends Control.Component<Properties> {
    */
   @Class.Private()
   private bindProperties(): void {
-    Object.defineProperties(this.skeleton, {
-      path: super.bindDescriptor(this, Template.prototype, 'path'),
-      base: super.bindDescriptor(this, Template.prototype, 'base'),
-      open: super.bindDescriptor(this, Template.prototype, 'open'),
-      reset: super.bindDescriptor(this, Template.prototype, 'reset')
-    });
+    this.bindComponentProperties(this.skeleton, ['path', 'base', 'open', 'reset']);
   }
 
   /**

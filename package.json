@@ -7,7 +7,7 @@
   "name": "@singleware/ui-routing",
   "description": "Singleware UI routing package.",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "release/source/index.js",
   "types": "release/types/index.d.ts",
   "keywords": [
@@ -24,15 +24,15 @@
     "node": ">=8"
   },
   "dependencies": {
-    "@singleware/class": "^1.1.11",
+    "@singleware/class": "^1.1.12",
     "@singleware/jsx": "^1.0.12",
-    "@singleware/path": "^1.0.0",
-    "@singleware/routing": "^1.0.23",
-    "@singleware/ui-control": "^1.0.11"
+    "@singleware/path": "^1.0.1",
+    "@singleware/routing": "^1.0.24",
+    "@singleware/ui-control": "^1.1.2"
   },
   "devDependencies": {
-    "@singleware/frontend": "^1.0.28",
-    "prettier": "^1.14.2",
+    "@singleware/frontend": "^1.1.0",
+    "prettier": "^1.14.3",
     "typescript": "^2.9.2"
   },
   "prettier": {
